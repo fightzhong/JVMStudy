@@ -1,0 +1,606 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>安全点和安全区域 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="05_4垃圾回收之对象年龄晋升阈值案例.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    类的加载&连接&初始化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01_类的加载&连接&初始化.html">
+            
+                <a href="01_类的加载&连接&初始化.html">
+            
+                    
+                    类的加载&连接&初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="02_1类加载器详解.html">
+            
+                <a href="02_1类加载器详解.html">
+            
+                    
+                    类加载器详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="02_2自定义类加载器代码.html">
+            
+                <a href="02_2自定义类加载器代码.html">
+            
+                    
+                    自定义类加载器代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    字节码
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="03_1字节码.html">
+            
+                <a href="03_1字节码.html">
+            
+                    
+                    字节码分析1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="03_2字节码完整分析.html">
+            
+                <a href="03_2字节码完整分析.html">
+            
+                    
+                    字节码分析2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="03_3字节码分析之异常表.html">
+            
+                <a href="03_3字节码分析之异常表.html">
+            
+                    
+                    字节码分析之异常表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="03_4虚方法与非虚方法.html">
+            
+                <a href="03_4虚方法与非虚方法.html">
+            
+                    
+                    虚方法与非虚方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="03_5虚方法和非虚方法案例2.html">
+            
+                <a href="03_5虚方法和非虚方法案例2.html">
+            
+                    
+                    虚方法和非虚方法案例2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="03_6JVM基于栈的指令集分析.html">
+            
+                <a href="03_6JVM基于栈的指令集分析.html">
+            
+                    
+                    JVM基于栈的指令集分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    内存结构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="04_1内存结构.html">
+            
+                <a href="04_1内存结构.html">
+            
+                    
+                    内存结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="04_2内存结构之堆内存溢出案例分析.html">
+            
+                <a href="04_2内存结构之堆内存溢出案例分析.html">
+            
+                    
+                    内存结构之堆内存溢出案例分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="04_3内存结构之方法区溢出案例分析.html">
+            
+                <a href="04_3内存结构之方法区溢出案例分析.html">
+            
+                    
+                    内存结构之方法区溢出案例分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    垃圾回收
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="05_1垃圾回收概念描述.html">
+            
+                <a href="05_1垃圾回收概念描述.html">
+            
+                    
+                    垃圾回收概念描述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="05_2垃圾回收日志分析实例.html">
+            
+                <a href="05_2垃圾回收日志分析实例.html">
+            
+                    
+                    垃圾回收日志分析实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="05_3垃圾回收之对象大小晋升阈值测试.html">
+            
+                <a href="05_3垃圾回收之对象大小晋升阈值测试.html">
+            
+                    
+                    垃圾回收之对象大小晋升阈值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="05_4垃圾回收之对象年龄晋升阈值案例.html">
+            
+                <a href="05_4垃圾回收之对象年龄晋升阈值案例.html">
+            
+                    
+                    垃圾回收之对象年龄晋升阈值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.5" data-path="05_5安全点和安全区域.html">
+            
+                <a href="05_5安全点和安全区域.html">
+            
+                    
+                    安全点和安全区域
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    CMS垃圾回收器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="05_6CMS垃圾回收器.html">
+            
+                <a href="05_6CMS垃圾回收器.html">
+            
+                    
+                    CMS垃圾回收器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    G1垃圾回收器
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >安全点和安全区域</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x679A;&#x4E3E;&#x6839;&#x8282;&#x70B9;">&#x679A;&#x4E3E;&#x6839;&#x8282;&#x70B9;</h2>
+<pre><code>&#x5F53;&#x6267;&#x884C;&#x7CFB;&#x7EDF;&#x505C;&#x987F;&#x4E0B;&#x6765;&#x540E;, &#x5E76;&#x4E0D;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4E0D;&#x6F0F;&#x7684;&#x68C0;&#x67E5;&#x5B8C;&#x6240;&#x6709;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x548C;&#x5168;&#x5C40;&#x7684;&#x5F15;&#x7528;&#x4F4D;&#x7F6E;, &#x865A;&#x62DF;&#x673A;&#x5E94;&#x8BE5;&#x662F;&#x6709;&#x529E;&#x6CD5;&#x76F4;
+&#x63A5;&#x5F97;&#x77E5;&#x54EA;&#x4E9B;&#x5730;&#x65B9;&#x5B58;&#x653E;&#x7740;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x3002;&#x5728;HotSpot&#x7684;&#x5B9E;&#x73B0;&#x4E2D;, &#x662F;&#x4F7F;&#x7528;&#x4E00;&#x7EC4;&#x79F0;&#x4E3A;OopMap&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6765;&#x8FBE;&#x5230;&#x8FD9;&#x4E2A;&#x76EE;&#x7684;&#x7684;
+</code></pre><h2 id="&#x5B89;&#x5168;&#x70B9;">&#x5B89;&#x5168;&#x70B9;</h2>
+<pre><code>&#x5728;Oop&#x7684;&#x534F;&#x52A9;&#x4E0B;, HotSpot&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x4E14;&#x51C6;&#x786E;&#x5730;&#x5B8C;&#x6210;GC Roots&#x679A;&#x4E3E;, &#x4F46;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x95EE;&#x9898;, &#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5F15;&#x7528;&#x5173;&#x7CFB;&#x53D8;&#x5316;, &#x6216;
+&#x8005;&#x8BF4;OopMap&#x5185;&#x5BB9;&#x53D8;&#x5316;&#x5730;&#x6307;&#x4EE4;&#x975E;&#x5E38;&#x591A;, &#x5982;&#x679C;&#x4E3A;&#x6BCF;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x90FD;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x5730;OopMap, &#x90A3;&#x5C06;&#x4F1A;&#x9700;&#x8981;&#x5927;&#x91CF;&#x7684;&#x989D;&#x5916;&#x7A7A;&#x95F4;, &#x8FD9;&#x6837;
+GC&#x7684;&#x7A7A;&#x95F4;&#x6210;&#x672C;&#x5C06;&#x4F1A;&#x53D8;&#x5F97;&#x66F4;&#x9AD8;
+
+&#x5B9E;&#x9645;&#x4E0A;, HotSpot&#x5E76;&#x6CA1;&#x6709;&#x4E3A;&#x6BCF;&#x6761;&#x6307;&#x4EE4;&#x90FD;&#x751F;&#x6210;OopMap, &#x800C;&#x53EA;&#x662F;&#x5728;&quot;&#x7279;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&quot;&#x8BB0;&#x5F55;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;, &#x8FD9;&#x4E9B;&#x4F4D;&#x7F6E;&#x79F0;&#x4E3A;&#x5B89;&#x5168;&#x70B9;
+(SafePoint), &#x5373;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x65F6;&#x5E76;&#x975E;&#x5728;&#x6240;&#x6709;&#x5730;&#x65B9;&#x90FD;&#x80FD;&#x505C;&#x987F;&#x4E0B;&#x6765;&#x5F00;&#x59CB;GC, &#x53EA;&#x6709;&#x5728;&#x8FBE;&#x5230;&#x5B89;&#x5168;&#x70B9;&#x65F6;&#x624D;&#x80FD;&#x6682;&#x505C;
+
+SafePoint&#x7684;&#x9009;&#x5B9A;&#x4E0D;&#x80FD;&#x592A;&#x5C11;&#x4EE5;&#x81F3;&#x4E8E;&#x8BA9;GC&#x7B49;&#x5F85;&#x65F6;&#x95F4;&#x592A;&#x957F;, &#x4E5F;&#x4E0D;&#x80FD;&#x8FC7;&#x4E8E;&#x9891;&#x7E41;&#x4EE5;&#x81F3;&#x4E8E;&#x8FC7;&#x5206;&#x589E;&#x5927;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x8D1F;&#x8F7D;&#x3002;&#x6240;&#x4EE5;, &#x5B89;
+&#x5168;&#x70B9;&#x7684;&#x9009;&#x5B9A;&#x57FA;&#x672C;&#x662F;&#x4EE5;&quot;&#x662F;&#x5426;&#x5177;&#x6709;&#x8BA9;&#x7A0B;&#x5E8F;&#x957F;&#x65F6;&#x95F4;&#x6267;&#x884C;&#x7684;&#x7279;&#x5F81;&quot;&#x4E3A;&#x6807;&#x51C6;&#x8FDB;&#x884C;&#x9009;&#x5B9A;&#x7684;, &#x56E0;&#x4E3A;&#x6BCF;&#x6761;&#x6307;&#x4EE4;&#x6267;&#x884C;&#x7684;&#x65F6;&#x95F4;&#x975E;&#x5E38;&#x77ED;&#x6682;,
+&#x7A0B;&#x5E8F;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x56E0;&#x4E3A;&#x6307;&#x4EE4;&#x6D41;&#x957F;&#x5EA6;&#x592A;&#x957F;&#x8FD9;&#x4E2A;&#x539F;&#x56E0;&#x800C;&#x8FC7;&#x957F;&#x65F6;&#x95F4;&#x8FD0;&#x884C;, &quot;&#x957F;&#x65F6;&#x95F4;&#x6267;&#x884C;&quot;&#x7684;&#x6700;&#x660E;&#x663E;&#x7279;&#x5F81;&#x5C31;&#x662F;&#x6307;&#x4EE4;&#x5E8F;&#x5217;&#x590D;&#x7528;, &#x4F8B;
+&#x5982;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x3001;&#x5FAA;&#x73AF;&#x8DF3;&#x8F6C;&#x3001;&#x5F02;&#x5E38;&#x8DF3;&#x8F6C;&#x7B49;, &#x6240;&#x4EE5;&#x5177;&#x6709;&#x8FD9;&#x4E9B;&#x529F;&#x80FD;&#x7684;&#x6307;&#x4EE4;&#x624D;&#x4F1A;&#x4EA7;&#x751F;SafePoint
+
+&#x5BF9;&#x4E8E;SafePoint, &#x53E6;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x8003;&#x8651;&#x7684;&#x95EE;&#x9898;&#x662F;&#x5982;&#x4F55;&#x5728;GC&#x53D1;&#x751F;&#x65F6;&#x8BA9;&#x6240;&#x6709;&#x7EBF;&#x7A0B;(&#x4E0D;&#x5305;&#x62EC;&#x6267;&#x884C;JNI&#x8C03;&#x7528;&#x7684;&#x7EBF;&#x7A0B;)&#x90FD;&#x8FC5;&#x901F;&#x8DD1;&#x5230;
+&#x6700;&#x8FD1;&#x7684;&#x5B89;&#x5168;&#x70B9;&#x4E0A;&#x518D;&#x505C;&#x987F;&#x4E0B;&#x6765;: &#x62A2;&#x5360;&#x5F0F;&#x4E2D;&#x65AD;&#x548C;&#x4E3B;&#x52A8;&#x5F0F;&#x4E2D;&#x65AD;
+
+&#x62A2;&#x5360;&#x5F0F;&#x4E2D;&#x65AD;(&#x51E0;&#x4E4E;&#x6CA1;&#x6709;&#x865A;&#x62DF;&#x673A;&#x91C7;&#x7528;&#x8BE5;&#x65B9;&#x5F0F;):
+  &#x5B83;&#x4E0D;&#x9700;&#x8981;&#x7EBF;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x4E3B;&#x52A8;&#x53BB;&#x914D;&#x5408;, &#x5728;GC&#x53D1;&#x751F;&#x65F6;, &#x9996;&#x5148;&#x628A;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x5168;&#x90E8;&#x4E2D;&#x65AD;, &#x5982;&#x679C;&#x6709;&#x7EBF;&#x7A0B;&#x4E2D;&#x65AD;&#x7684;&#x5730;&#x65B9;&#x4E0D;&#x5728;&#x5B89;
+  &#x5168;&#x70B9;&#x4E0A;, &#x5C31;&#x6062;&#x590D;&#x7EBF;&#x7A0B;, &#x8BA9;&#x5B83;&#x8DD1;&#x5230;&#x5B89;&#x5168;&#x70B9;&#x4E0A;
+
+&#x4E3B;&#x52A8;&#x5F0F;&#x4E2D;&#x65AD;:
+  &#x5F53;GC&#x9700;&#x8981;&#x4E2D;&#x65AD;&#x7EBF;&#x7A0B;&#x7684;&#x65F6;&#x5019;, &#x4E0D;&#x76F4;&#x63A5;&#x5BF9;&#x7EBF;&#x7A0B;&#x64CD;&#x4F5C;, &#x4EC5;&#x4EC5;&#x7B80;&#x5355;&#x5730;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6807;&#x5FD7;, &#x5404;&#x4E2A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x65F6;&#x4E3B;&#x52A8;&#x53BB;&#x8F6E;&#x8BE2;&#x8FD9;&#x4E2A;&#x6807;
+  &#x5FD7;, &#x53D1;&#x73B0;&#x4E2D;&#x65AD;&#x6807;&#x5FD7;&#x4E3A;&#x771F;&#x65F6;&#x5C31;&#x81EA;&#x5DF1;&#x4E2D;&#x65AD;&#x6302;&#x8D77;&#x3002;&#x8F6E;&#x8BE2;&#x6807;&#x5FD7;&#x7684;&#x5730;&#x65B9;&#x548C;&#x5B89;&#x5168;&#x70B9;&#x662F;&#x91CD;&#x5408;&#x7684;, &#x53E6;&#x5916;&#x518D;&#x52A0;&#x4E0A;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x9700;&#x8981;&#x5206;&#x914D;
+  &#x5185;&#x5B58;&#x7684;&#x5730;&#x65B9;
+</code></pre><h2 id="&#x5B89;&#x5168;&#x533A;&#x57DF;">&#x5B89;&#x5168;&#x533A;&#x57DF;</h2>
+<pre><code>&#x4F7F;&#x7528;&#x5B89;&#x5168;&#x70B9;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x95EE;&#x9898;: &#x867D;&#x7136;&#x8BE5;&#x673A;&#x5236;&#x4FDD;&#x8BC1;&#x4E86;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x65F6;, &#x518D;&#x9047;&#x5230;GC&#x65F6;&#x80FD;&#x5C3D;&#x5FEB;&#x5730;&#x8FDB;&#x5165;&#x5B89;&#x5168;&#x70B9;&#x5E76;&#x6267;&#x884C;GC, &#x4F46;&#x662F;&#x5982;&#x679C;
+                      &#x7A0B;&#x5E8F;&quot;&#x4E0D;&#x6267;&#x884C;&quot;&#x7684;&#x65F6;&#x5019;, &#x5373;&#x8BE5;&#x7EBF;&#x7A0B;&#x6CA1;&#x6709;&#x5206;&#x914D;&#x5230;CPU&#x65F6;&#x95F4;, &#x5982;&#x5904;&#x4E8E;Sleep&#x548C;Block&#x72B6;&#x6001;, &#x8FD9;
+                      &#x65F6;&#x5019;&#x7EBF;&#x7A0B;&#x5C31;&#x65E0;&#x6CD5;&#x54CD;&#x5E94;JVM&#x7684;&#x4E2D;&#x65AD;&#x8BF7;&#x6C42;, JVM&#x4E5F;&#x663E;&#x7136;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x7B49;&#x5F85;&#x7EBF;&#x7A0B;&#x91CD;&#x65B0;&#x5206;&#x914D;CPU&#x65F6;&#x95F4;,
+                      &#x5BF9;&#x4E8E;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x5C31;&#x9700;&#x8981;&#x7528;&#x5B89;&#x5168;&#x533A;&#x57DF;&#x6765;&#x89E3;&#x51B3;
+
+&#x5728;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x5230;Safe Region&#x5B89;&#x5168;&#x533A;&#x57DF;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x65F6;, &#x9996;&#x5148;&#x6807;&#x8BC6;&#x81EA;&#x5DF1;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165;&#x4E86;&#x5B89;&#x5168;&#x533A;&#x57DF;, &#x90A3;&#x6837;, &#x5F53;&#x5728;&#x8FD9;&#x6BB5;&#x65F6;&#x95F4;&#x91CC;JVM
+&#x8981;&#x53D1;&#x8D77;GC&#x65F6;, &#x5C31;&#x4E0D;&#x7528;&#x7BA1;&#x6807;&#x8BC6;&#x4E3A;&#x5B89;&#x5168;&#x533A;&#x57DF;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;&#x4E86;, &#x5728;&#x7EBF;&#x7A0B;&#x8981;&#x79BB;&#x5F00;&#x5B89;&#x5168;&#x533A;&#x57DF;&#x7684;&#x65F6;&#x5019;, &#x5B83;&#x8981;&#x68C0;&#x67E5;&#x7CFB;&#x7EDF;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B8C;
+&#x6210;&#x4E86;&#x6839;&#x8282;&#x70B9;&#x679A;&#x4E3E;(&#x6216;&#x8005;&#x662F;&#x6574;&#x4E2A;GC&#x8FC7;&#x7A0B;), &#x5982;&#x679C;&#x5B8C;&#x6210;&#x4E86;, &#x90A3;&#x7EBF;&#x7A0B;&#x5C31;&#x7EE7;&#x7EED;&#x6267;&#x884C;, &#x5426;&#x5219;&#x5B83;&#x5C31;&#x7B49;&#x5F85;&#x77E5;&#x9053;&#x6536;&#x5230;&#x53EF;&#x4EE5;&#x5B89;&#x5168;&#x79BB;&#x5F00;&#x5B89;
+&#x5168;&#x533A;&#x57DF;&#x7684;&#x4FE1;&#x53F7;&#x4E3A;&#x6B62;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05_4垃圾回收之对象年龄晋升阈值案例.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 垃圾回收之对象年龄晋升阈值">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"安全点和安全区域","level":"1.5.5","depth":2,"next":{"title":"CMS垃圾回收器","level":"1.6","depth":1,"ref":"","articles":[{"title":"CMS垃圾回收器","level":"1.6.1","depth":2,"path":"src/main/resources/05_6CMS垃圾回收器.md","ref":"src/main/resources/05_6CMS垃圾回收器.md","articles":[]}]},"previous":{"title":"垃圾回收之对象年龄晋升阈值","level":"1.5.4","depth":2,"path":"src/main/resources/05_4垃圾回收之对象年龄晋升阈值案例.md","ref":"src/main/resources/05_4垃圾回收之对象年龄晋升阈值案例.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/main/resources/05_5安全点和安全区域.md","mtime":"2019-08-13T05:05:02.807Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-13T16:56:07.622Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

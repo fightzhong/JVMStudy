@@ -1,0 +1,648 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>垃圾回收日志分析实例 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="05_3垃圾回收之对象大小晋升阈值测试.html" />
+    
+    
+    <link rel="prev" href="05_1垃圾回收概念描述.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    类的加载&连接&初始化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01_类的加载&连接&初始化.html">
+            
+                <a href="01_类的加载&连接&初始化.html">
+            
+                    
+                    类的加载&连接&初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="02_1类加载器详解.html">
+            
+                <a href="02_1类加载器详解.html">
+            
+                    
+                    类加载器详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="02_2自定义类加载器代码.html">
+            
+                <a href="02_2自定义类加载器代码.html">
+            
+                    
+                    自定义类加载器代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    字节码
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="03_1字节码.html">
+            
+                <a href="03_1字节码.html">
+            
+                    
+                    字节码分析1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="03_2字节码完整分析.html">
+            
+                <a href="03_2字节码完整分析.html">
+            
+                    
+                    字节码分析2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="03_3字节码分析之异常表.html">
+            
+                <a href="03_3字节码分析之异常表.html">
+            
+                    
+                    字节码分析之异常表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="03_4虚方法与非虚方法.html">
+            
+                <a href="03_4虚方法与非虚方法.html">
+            
+                    
+                    虚方法与非虚方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="03_5虚方法和非虚方法案例2.html">
+            
+                <a href="03_5虚方法和非虚方法案例2.html">
+            
+                    
+                    虚方法和非虚方法案例2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="03_6JVM基于栈的指令集分析.html">
+            
+                <a href="03_6JVM基于栈的指令集分析.html">
+            
+                    
+                    JVM基于栈的指令集分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    内存结构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="04_1内存结构.html">
+            
+                <a href="04_1内存结构.html">
+            
+                    
+                    内存结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="04_2内存结构之堆内存溢出案例分析.html">
+            
+                <a href="04_2内存结构之堆内存溢出案例分析.html">
+            
+                    
+                    内存结构之堆内存溢出案例分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="04_3内存结构之方法区溢出案例分析.html">
+            
+                <a href="04_3内存结构之方法区溢出案例分析.html">
+            
+                    
+                    内存结构之方法区溢出案例分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    垃圾回收
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="05_1垃圾回收概念描述.html">
+            
+                <a href="05_1垃圾回收概念描述.html">
+            
+                    
+                    垃圾回收概念描述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="05_2垃圾回收日志分析实例.html">
+            
+                <a href="05_2垃圾回收日志分析实例.html">
+            
+                    
+                    垃圾回收日志分析实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="05_3垃圾回收之对象大小晋升阈值测试.html">
+            
+                <a href="05_3垃圾回收之对象大小晋升阈值测试.html">
+            
+                    
+                    垃圾回收之对象大小晋升阈值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="05_4垃圾回收之对象年龄晋升阈值案例.html">
+            
+                <a href="05_4垃圾回收之对象年龄晋升阈值案例.html">
+            
+                    
+                    垃圾回收之对象年龄晋升阈值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="05_5安全点和安全区域.html">
+            
+                <a href="05_5安全点和安全区域.html">
+            
+                    
+                    安全点和安全区域
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    CMS垃圾回收器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="05_6CMS垃圾回收器.html">
+            
+                <a href="05_6CMS垃圾回收器.html">
+            
+                    
+                    CMS垃圾回收器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    G1垃圾回收器
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >垃圾回收日志分析实例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x5783;&#x573E;&#x56DE;&#x6536;&#x65E5;&#x5FD7;&#x5206;&#x6790;">&#x5783;&#x573E;&#x56DE;&#x6536;&#x65E5;&#x5FD7;&#x5206;&#x6790;</h2>
+<ul>
+<li><p>JVM&#x53C2;&#x6570;</p>
+<pre><code>-verbose:gc             &#x8F93;&#x51FA;GC&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;
+-Xms20m                 &#x8BBE;&#x7F6E;&#x5806;&#x7684;&#x6700;&#x5C0F;&#x4E3A;20m
+-Xmx20m                 &#x8BBE;&#x7F6E;&#x5806;&#x7684;&#x6700;&#x5927;&#x4E3A;20m
+-Xmn10m                 &#x8BBE;&#x7F6E;&#x5806;&#x4E2D;&#x65B0;&#x751F;&#x4EE3;&#x4E3A;10m
+-XX:+PrintGCDetails     &#x5F00;&#x542F;&#x6253;&#x5370;GC&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x5230;&#x63A7;&#x5236;&#x53F0;&#x7684;&#x529F;&#x80FD;
+-XX:SurvivorRatio=8     &#x8BBE;&#x7F6E;&#x65B0;&#x751F;&#x4EE3;&#x4E2D;eden&#x7A7A;&#x95F4;&#x548C;survivor&#x7A7A;&#x95F4;&#x7684;&#x6BD4;&#x4F8B;&#x662F;8:1:1
+&#x5206;&#x6790;: &#x7531;&#x4EE5;&#x4E0A;JVM&#x53C2;&#x6570;&#x53EF;&#x5F97;, &#x6211;&#x4EEC;&#x8BBE;&#x7F6E;&#x4E86;&#x5806;&#x7684;&#x5927;&#x5C0F;&#x4E3A;20m, &#x65B0;&#x751F;&#x4EE3;&#x7684;&#x5927;&#x5C0F;&#x4E3A;10m, &#x65B0;&#x751F;&#x4EE3;&#x4E2D;eden&#x7A7A;&#x95F4;&#x4E3A;8m, &#x4E24;&#x4E2A;
+    survivor&#x7A7A;&#x95F4;&#x5747;&#x4E3A;1m, &#x9664;&#x53BB;&#x65B0;&#x751F;&#x4EE3;&#x540E;&#x4FBF;&#x662F;&#x8001;&#x5E74;&#x4EE3;, &#x6240;&#x4EE5;&#x8001;&#x5E74;&#x4EE3;&#x7684;&#x7A7A;&#x95F4;&#x4E3A;10m
+</code></pre></li>
+<li><p>&#x4EE3;&#x7801;&#x4E00;(&#x65E0;GC)</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass1</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> </span>{}
+}
+&#x5206;&#x6790;: &#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;TestClass1&#x7C7B;, &#x5E76;&#x5728;&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;main&#x65B9;&#x6CD5;, &#x7136;&#x540E;&#x6267;&#x884C;main&#x65B9;&#x6CD5;, &#x6B64;&#x65F6;&#x67E5;&#x770B;&#x8F93;&#x51FA;&#x5982;&#x4E0B;
+    &#x56FE;&#x6240;&#x793A;
+</code></pre>
+</li>
+</ul>
+<p><img src="photos/&#x5783;&#x573E;&#x56DE;&#x6536;/06_&#x5783;&#x573E;&#x56DE;&#x6536;&#x65E5;&#x5FD7;&#x5206;&#x6790;1.png"></p>
+<ul>
+<li><p>&#x4EE3;&#x7801;&#x4E8C;(MinorGC)</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass1</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> </span>{
+      <span class="hljs-keyword">int</span> size = <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>;
+      <span class="hljs-keyword">byte</span>[] arr1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">2</span> * size];
+      <span class="hljs-keyword">byte</span>[] arr2 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">2</span> * size];
+      <span class="hljs-keyword">byte</span>[] arr3 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">3</span> * size];
+
+  }
+}
+&#x5206;&#x6790;: &#x8BBE;&#x7F6E;&#x5927;&#x5C0F;size&#x4E3A;<span class="hljs-number">1024</span>*<span class="hljs-number">1024</span>, &#x90A3;&#x4E48;&#x5F53;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x5E76;&#x4E14;&#x4E3A;size&#x5927;&#x5C0F;&#x7684;&#x65F6;&#x5019;, &#x5219;&#x8BE5;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x7684;&#x5927;&#x5C0F;&#x4E3A;
+    <span class="hljs-number">1</span>M, &#x6839;&#x636E;&#x4EE3;&#x7801;&#x53EF;&#x5F97;, &#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;<span class="hljs-number">7</span>M&#x5927;&#x5C0F;&#x7684;&#x5373;<span class="hljs-number">7168</span>K&#x5927;&#x5C0F;&#x7684;&#x5B57;&#x8282;&#x6570;&#x7EC4;, &#x540C;&#x65F6;&#x4F1A;&#x5728;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#x5360;&#x636E;<span class="hljs-number">7168</span>K, &#x52A0;&#x4E0A;
+    &#x4E4B;&#x524D;&#x7684;&#x5206;&#x6790;&#x53EF;&#x5F97;, &#x865A;&#x62DF;&#x673A;&#x9ED8;&#x8BA4;&#x4F1A;&#x4F7F;&#x7528;<span class="hljs-number">2009</span>K, &#x6240;&#x4EE5;<span class="hljs-number">7168</span>+<span class="hljs-number">2009</span>=<span class="hljs-number">9177</span>&#x5DF2;&#x7ECF;&#x5927;&#x4E8E;&#x4E86;eden&#x7A7A;&#x95F4;<span class="hljs-number">8192</span>K&#x7684;&#x5927;&#x5C0F;,
+    &#x6B64;&#x65F6;&#x4F1A;&#x6267;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;, &#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;: 
+
+    &#x8865;&#x5145;: PSYoungGen: <span class="hljs-function">Parallel <span class="hljs-title">Scavenge</span> <span class="hljs-params">(&#x65B0;&#x751F;&#x4EE3;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;)</span>
+          ParOldGen: Parallel <span class="hljs-title">Old</span> <span class="hljs-params">(&#x8001;&#x5E74;&#x4EE3;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;)</span>
+</span></code></pre>
+</li>
+</ul>
+<p><img src="photos/&#x5783;&#x573E;&#x56DE;&#x6536;/06_&#x5783;&#x573E;&#x56DE;&#x6536;&#x65E5;&#x5FD7;&#x5206;&#x6790;2.png"></p>
+<ul>
+<li>&#x4EE3;&#x7801;&#x4E09;(FullGC)<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass1</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> </span>{
+      <span class="hljs-keyword">int</span> size = <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>;
+      <span class="hljs-keyword">byte</span>[] arr1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">2</span> * size];
+      <span class="hljs-keyword">byte</span>[] arr2 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">3</span> * size];
+      <span class="hljs-keyword">byte</span>[] arr3 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">3</span> * size];
+  }
+}
+&#x5206;&#x6790;: &#x5728;&#x4E0A;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5C06;arr2&#x7684;&#x5927;&#x5C0F;&#x8BBE;&#x7F6E;&#x4E3A;<span class="hljs-number">3</span>M, &#x6B64;&#x65F6;&#x4F1A;&#x89E6;&#x53D1;Full GC, &#x6211;&#x4EEC;&#x5148;&#x4E0D;&#x7528;&#x53BB;&#x8003;&#x8651;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x89E6;&#x53D1;&#x8BE5;
+    GC, &#x4E0B;&#x9762;&#x7684;&#x5206;&#x6790;&#x53EA;&#x662F;&#x5BF9;Full GC&#x65E5;&#x5FD7;&#x7684;&#x8BB2;&#x89E3;
+</code></pre>
+</li>
+</ul>
+<p><img src="photos/&#x5783;&#x573E;&#x56DE;&#x6536;/06_&#x5783;&#x573E;&#x56DE;&#x6536;&#x65E5;&#x5FD7;&#x5206;&#x6790;3.png"></p>
+<ul>
+<li>&#x4EE3;&#x7801;&#x56DB;(&#x9A8C;&#x8BC1;JVM&#x4E2D;&#x65B0;&#x751F;&#x4EE3;&#x5BB9;&#x7EB3;&#x4E0D;&#x4E0B;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x65F6;, &#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x5C06;&#x4F1A;&#x76F4;&#x63A5;&#x5728;&#x8001;&#x5E74;&#x4EE3;&#x4E2D;&#x8BDE;&#x751F;)<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass2</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> </span>{
+      <span class="hljs-keyword">int</span> size = <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>;
+      <span class="hljs-keyword">byte</span>[] arr1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">8</span> * size];
+  }
+}
+&#x5206;&#x6790;: &#x53C2;&#x6570;&#x4ECD;&#x7136;&#x662F;&#x4E4B;&#x524D;&#x90A3;&#x51E0;&#x4E2A;, &#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x65B0;&#x751F;&#x4EE3;&#x4E2D;Eden&#x7A7A;&#x95F4;&#x4E3A;<span class="hljs-number">8</span>M, &#x4E24;&#x4E2A;Survivor&#x7A7A;&#x95F4;&#x5747;&#x4E3A;<span class="hljs-number">1</span>M, &#x603B;&#x7684;&#x6765;&#x8BF4;&#x65B0;&#x751F;&#x4EE3;
+   &#x4E2D;&#x53EF;&#x7528;&#x7A7A;&#x95F4;&#x662F;<span class="hljs-number">9</span>M, &#x6B64;&#x65F6;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x7684;&#x662F;<span class="hljs-number">8</span>M&#x7684;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;, &#x65B0;&#x751F;&#x4EE3;&#x662F;&#x4E0D;&#x80FD;&#x5B58;&#x653E;&#x4E0B;&#x5982;&#x6B64;&#x5927;&#x7684;&#x5BF9;&#x8C61;&#x7684;, &#x6240;&#x4EE5;&#x4F1A;&#x76F4;&#x63A5;&#x664B;
+   &#x5347;&#x5230;&#x8001;&#x5E74;&#x4EE3;, &#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;
+</code></pre>
+</li>
+</ul>
+<p><img src="photos/&#x5783;&#x573E;&#x56DE;&#x6536;/06_&#x5783;&#x573E;&#x56DE;&#x6536;&#x65E5;&#x5FD7;&#x5206;&#x6790;4.png"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05_1垃圾回收概念描述.html" class="navigation navigation-prev " aria-label="Previous page: 垃圾回收概念描述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="05_3垃圾回收之对象大小晋升阈值测试.html" class="navigation navigation-next " aria-label="Next page: 垃圾回收之对象大小晋升阈值">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"垃圾回收日志分析实例","level":"1.5.2","depth":2,"next":{"title":"垃圾回收之对象大小晋升阈值","level":"1.5.3","depth":2,"path":"src/main/resources/05_3垃圾回收之对象大小晋升阈值测试.md","ref":"src/main/resources/05_3垃圾回收之对象大小晋升阈值测试.md","articles":[]},"previous":{"title":"垃圾回收概念描述","level":"1.5.1","depth":2,"path":"src/main/resources/05_1垃圾回收概念描述.md","ref":"src/main/resources/05_1垃圾回收概念描述.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/main/resources/05_2垃圾回收日志分析实例.md","mtime":"2019-08-13T16:51:41.976Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-13T16:56:07.622Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,676 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CMS垃圾回收器 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    类的加载&连接&初始化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01_类的加载&连接&初始化.html">
+            
+                <a href="01_类的加载&连接&初始化.html">
+            
+                    
+                    类的加载&连接&初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="02_1类加载器详解.html">
+            
+                <a href="02_1类加载器详解.html">
+            
+                    
+                    类加载器详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="02_2自定义类加载器代码.html">
+            
+                <a href="02_2自定义类加载器代码.html">
+            
+                    
+                    自定义类加载器代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    字节码
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="03_1字节码.html">
+            
+                <a href="03_1字节码.html">
+            
+                    
+                    字节码分析1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="03_2字节码完整分析.html">
+            
+                <a href="03_2字节码完整分析.html">
+            
+                    
+                    字节码分析2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="03_3字节码分析之异常表.html">
+            
+                <a href="03_3字节码分析之异常表.html">
+            
+                    
+                    字节码分析之异常表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="03_4虚方法与非虚方法.html">
+            
+                <a href="03_4虚方法与非虚方法.html">
+            
+                    
+                    虚方法与非虚方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="03_5虚方法和非虚方法案例2.html">
+            
+                <a href="03_5虚方法和非虚方法案例2.html">
+            
+                    
+                    虚方法和非虚方法案例2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="03_6JVM基于栈的指令集分析.html">
+            
+                <a href="03_6JVM基于栈的指令集分析.html">
+            
+                    
+                    JVM基于栈的指令集分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    内存结构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="04_1内存结构.html">
+            
+                <a href="04_1内存结构.html">
+            
+                    
+                    内存结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="04_2内存结构之堆内存溢出案例分析.html">
+            
+                <a href="04_2内存结构之堆内存溢出案例分析.html">
+            
+                    
+                    内存结构之堆内存溢出案例分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="04_3内存结构之方法区溢出案例分析.html">
+            
+                <a href="04_3内存结构之方法区溢出案例分析.html">
+            
+                    
+                    内存结构之方法区溢出案例分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    垃圾回收
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="05_1垃圾回收概念描述.html">
+            
+                <a href="05_1垃圾回收概念描述.html">
+            
+                    
+                    垃圾回收概念描述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="05_2垃圾回收日志分析实例.html">
+            
+                <a href="05_2垃圾回收日志分析实例.html">
+            
+                    
+                    垃圾回收日志分析实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="05_3垃圾回收之对象大小晋升阈值测试.html">
+            
+                <a href="05_3垃圾回收之对象大小晋升阈值测试.html">
+            
+                    
+                    垃圾回收之对象大小晋升阈值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="05_4垃圾回收之对象年龄晋升阈值案例.html">
+            
+                <a href="05_4垃圾回收之对象年龄晋升阈值案例.html">
+            
+                    
+                    垃圾回收之对象年龄晋升阈值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="05_5安全点和安全区域.html">
+            
+                <a href="05_5安全点和安全区域.html">
+            
+                    
+                    安全点和安全区域
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    CMS垃圾回收器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.6.1" data-path="05_6CMS垃圾回收器.html">
+            
+                <a href="05_6CMS垃圾回收器.html">
+            
+                    
+                    CMS垃圾回收器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    G1垃圾回收器
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >CMS垃圾回收器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="cmsconcurrent-mark-sweep">CMS(Concurrent Mark Sweep)</h2>
+<h2 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h2>
+<pre><code>&#x4EE5;&#x83B7;&#x53D6;&#x6700;&#x77ED;&#x56DE;&#x6536;&#x505C;&#x987F;&#x65F6;&#x95F4;&#x4E3A;&#x76EE;&#x6807;, &#x5783;&#x573E;&#x6536;&#x96C6;&#x7684;&#x7EBF;&#x7A0B;&#x548C;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x6267;&#x884C;, &#x57FA;&#x4E8E;&quot;&#x6807;&#x8BB0;-&#x6E05;&#x9664;&quot;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;, CMS&#x6536;
+&#x96C6;&#x5668;&#x5728;&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#x8017;&#x65F6;&#x6700;&#x957F;&#x7684;&#x5E76;&#x53D1;&#x6807;&#x8BB0;&#x548C;&#x5E76;&#x53D1;&#x6E05;&#x9664;&#x8FC7;&#x7A0B;&#x6536;&#x96C6;&#x5668;&#x7EBF;&#x7A0B;&#x90FD;&#x53EF;&#x4EE5;&#x4E0E;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x4E00;&#x8D77;&#x5DE5;&#x4F5C;, &#x56E0;&#x6B64;&#x4ECE;&#x603B;&#x4F53;&#x4E0A;&#x770B;,
+CMS&#x6536;&#x96C6;&#x5668;&#x7684;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x8FC7;&#x7A0B;&#x662F;&#x4E0E;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x4E00;&#x8D77;&#x5E76;&#x53D1;&#x6267;&#x884C;&#x7684;
+</code></pre><h2 id="&#x4F18;&#x70B9;-&#x5E76;&#x53D1;&#x6536;&#x96C6;&#x3001;&#x4F4E;&#x505C;&#x987F;">&#x4F18;&#x70B9;: &#x5E76;&#x53D1;&#x6536;&#x96C6;&#x3001;&#x4F4E;&#x505C;&#x987F;</h2>
+<h2 id="&#x7F3A;&#x70B9;">&#x7F3A;&#x70B9;</h2>
+<pre><code>&lt;1&gt; &#x5BF9;CPU&#x8D44;&#x6E90;&#x975E;&#x5E38;&#x654F;&#x611F;
+&lt;2&gt; &#x65E0;&#x6CD5;&#x5904;&#x7406;&#x6D6E;&#x52A8;&#x5783;&#x573E;(Floating Garbage), &#x6D6E;&#x52A8;&#x5783;&#x573E;&#x6307;&#x7684;&#x662F;&#x4E00;&#x4E9B;&#x5BF9;&#x8C61;&#x5F53;&#x524D;&#x53EF;&#x80FD;&#x662F;&#x5B58;&#x5728;&#x5F15;&#x7528;&#x7684;, &#x800C;&#x5728;&#x5E76;&#x53D1;&#x6807;&#x8BB0;
+    &#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x5931;&#x53BB;&#x4E86;&#x5F15;&#x7528;, &#x4F46;&#x662F;&#x8BE5;&#x5BF9;&#x8C61;&#x5728;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x770B;&#x6765;&#x4ECD;&#x7136;&#x662F;&#x5B58;&#x6D3B;&#x7684;, &#x5373;&#x672C;&#x6B21;&#x5783;&#x573E;&#x56DE;&#x6536;&#x4E0D;&#x4F1A;&#x56DE;&#x6536;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;, &#x53EA;
+    &#x80FD;&#x7B49;&#x4E0B;&#x4E00;&#x6B21;&#x5783;&#x573E;&#x56DE;&#x6536;&#x4E86;, &#x53EF;&#x80FD;&#x51FA;&#x73B0;&quot;Concurrent Mode Failure&quot;&#x5931;&#x8D25;(&#x5224;&#x5B9A;&#x4E3A;&#x8001;&#x5E74;&#x4EE3;&#x7A7A;&#x95F4;&#x4E0D;&#x8DB3;)&#x800C;&#x5BFC;&#x81F4;&#x53E6;&#x4E00;
+    &#x6B21;Full GC&#x7684;&#x4EA7;&#x751F;&#x3002;&#x5982;&#x679C;&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x8001;&#x5E74;&#x4EE3;&#x589E;&#x957F;&#x4E0D;&#x662F;&#x592A;&#x5FEB;, &#x53EF;&#x4EE5;&#x9002;&#x5F53;&#x8C03;&#x9AD8;&#x4E00;&#x4E2A;JVM&#x53C2;&#x6570;&#x7684;&#x503C;&#x6765;&#x63D0;&#x9AD8;&#x89E6;&#x53D1;&#x767E;&#x5206;&#x6BD4;
+    (-XX:+CMSInitiatingOccupancyFraction), &#x503C;&#x8D8A;&#x9AD8;&#x5219;&#x89E6;&#x53D1;CMS&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;GC&#x7684;&#x9891;&#x7387;&#x5C31;&#x8D8A;&#x4F4E;, &#x4EE5;&#x4FBF;&#x964D;&#x4F4E;&#x5185;
+    &#x5B58;&#x56DE;&#x6536;&#x6B21;&#x6570;&#x4ECE;&#x800C;&#x83B7;&#x53D6;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#x3002;&#x8981;&#x662F;CMS&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x9884;&#x7559;&#x7684;&#x5185;&#x5B58;&#x65E0;&#x6CD5;&#x6EE1;&#x8DB3;&#x7A0B;&#x5E8F;&#x9700;&#x8981;&#x65F6;, &#x865A;&#x62DF;&#x673A;&#x5C06;&#x542F;&#x52A8;&#x540E;&#x5907;&#x9884;
+    &#x6848;, &#x5373;&#x542F;&#x7528;Serial Old&#x6536;&#x96C6;&#x5668;&#x6765;&#x91CD;&#x65B0;&#x8FDB;&#x884C;&#x8001;&#x5E74;&#x4EE3;&#x7684;&#x5783;&#x573E;&#x6536;&#x96C6;, &#x8FD9;&#x6837;&#x505C;&#x987F;&#x65F6;&#x95F4;&#x5C31;&#x5F88;&#x957F;&#x4E86;, &#x6240;&#x4EE5;&#x8BF4;&#x8BE5;JVM&#x53C2;&#x6570;&#x8BBE;
+    &#x7F6E;&#x5F97;&#x592A;&#x9AD8;&#x5F88;&#x5BB9;&#x6613;&#x5BFC;&#x81F4;&#x5927;&#x91CF;&quot;Concurrent Mode Failure&quot;&#x5931;&#x8D25;, &#x6027;&#x80FD;&#x53CD;&#x800C;&#x964D;&#x4F4E;
+&lt;3&gt; &#x6536;&#x96C6;&#x7ED3;&#x675F;&#x65F6;&#x4F1A;&#x6709;&#x5927;&#x91CF;&#x7A7A;&#x95F4;&#x788E;&#x7247;&#x4EA7;&#x751F;, &#x7A7A;&#x95F4;&#x788E;&#x7247;&#x8FC7;&#x591A;&#x65F6;, &#x5C06;&#x4F1A;&#x7ED9;&#x5927;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x5E26;&#x6765;&#x5F88;&#x5927;&#x9EBB;&#x70E6;, &#x5F80;&#x5F80;&#x51FA;&#x73B0;&#x8001;&#x5E74;&#x4EE3;&#x8FD8;
+    &#x6709;&#x5F88;&#x5927;&#x7A7A;&#x95F4;&#x5269;&#x4F59;, &#x4F46;&#x662F;&#x65E0;&#x6CD5;&#x627E;&#x5230;&#x8DB3;&#x591F;&#x5927;&#x7684;&#x8FDE;&#x7EED;&#x7A7A;&#x95F4;&#x6765;&#x5206;&#x914D;&#x5F53;&#x524D;&#x5BF9;&#x8C61;, &#x4E0D;&#x5F97;&#x4E0D;&#x63D0;&#x524D;&#x8FDB;&#x884C;&#x4E00;&#x6B21;Full GC&#x3002;CMS&#x6536;&#x96C6;
+    &#x5668;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;-XX:+UseCMSCompactAtFullCollection&#x5F00;&#x5173;&#x53C2;&#x6570;(&#x9ED8;&#x8BA4;&#x5F00;&#x542F;), &#x7528;&#x4E8E;&#x5728;CMS&#x6536;&#x96C6;&#x5668;&#x9876;&#x4E0D;&#x4F4F;&#x8981;&#x8FDB;
+    &#x884C;Full GC&#x65F6;&#x5F00;&#x542F;&#x5185;&#x5B58;&#x788E;&#x7247;&#x7684;&#x5408;&#x5E76;&#x6574;&#x7406;&#x8FC7;&#x7A0B;,&#x5185;&#x5B58;&#x6574;&#x7406;&#x8FC7;&#x7A0B;&#x662F;&#x65E0;&#x6CD5;&#x5E76;&#x53D1;&#x7684;, &#x7A7A;&#x95F4;&#x788E;&#x7247;&#x95EE;&#x9898;&#x6CA1;&#x6709;&#x4E86;, &#x4F46;&#x505C;&#x987F;&#x65F6;&#x95F4;
+    &#x4E0D;&#x5F97;&#x4E0D;&#x53D8;&#x957F;
+</code></pre><h2 id="&#x7A7A;&#x95F4;&#x5206;&#x914D;&#x62C5;&#x4FDD;">&#x7A7A;&#x95F4;&#x5206;&#x914D;&#x62C5;&#x4FDD;</h2>
+<pre><code>&#x5728;&#x53D1;&#x751F;Minor GC&#x4E4B;&#x524D;, &#x865A;&#x62DF;&#x673A;&#x4F1A;&#x5148;&#x68C0;&#x67E5;&#x8001;&#x5E74;&#x4EE3;&#x6700;&#x5927;&#x53EF;&#x7528;&#x7684;&#x8FDE;&#x7EED;&#x7A7A;&#x95F4;&#x662F;&#x5426;&#x5927;&#x4E8E;&#x65B0;&#x751F;&#x4EE3;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x603B;&#x7A7A;&#x95F4;, &#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x6761;
+&#x4EF6;&#x6210;&#x7ACB;, &#x90A3;&#x4E48;Minor GC&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x5B89;&#x5168;&#x7684;, &#x5F53;&#x5927;&#x91CF;&#x5BF9;&#x8C61;&#x5728;Minore GC&#x540E;&#x4ECD;&#x7136;&#x5B58;&#x6D3B;, &#x5C31;&#x9700;&#x8981;&#x8001;&#x5E74;&#x4EE3;&#x8FDB;&#x884C;&#x7A7A;&#x95F4;&#x5206;&#x914D;&#x62C5;&#x4FDD;,
+&#x628A;Survivor&#x65E0;&#x6CD5;&#x5BB9;&#x7EB3;&#x7684;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;&#x3002;&#x5982;&#x679C;&#x8001;&#x5E74;&#x4EE3;&#x5224;&#x65AD;&#x5230;&#x5269;&#x4F59;&#x7A7A;&#x95F4;&#x4E0D;&#x8DB3;(&#x6839;&#x636E;&#x4EE5;&#x5F80;&#x6BCF;&#x4E00;&#x6B21;&#x56DE;&#x6536;&#x664B;&#x5347;&#x5230;&#x8001;&#x5E74;&#x4EE3;
+&#x5BF9;&#x8C61;&#x5BB9;&#x91CF;&#x7684;&#x5E73;&#x5747;&#x503C;&#x4F5C;&#x4E3A;&#x7ECF;&#x9A8C;&#x503C;), &#x5219;&#x8FDB;&#x884C;&#x4E00;&#x6B21;Full GC
+</code></pre><h2 id="cms&#x6536;&#x96C6;&#x5668;&#x4E03;&#x4E2A;&#x9636;&#x6BB5;">CMS&#x6536;&#x96C6;&#x5668;&#x4E03;&#x4E2A;&#x9636;&#x6BB5;</h2>
+<ul>
+<li>Initial Mark(&#x521D;&#x59CB;&#x6807;&#x8BB0;)<pre><code>CMS&#x4E24;&#x6B21;STW&#x4E8B;&#x4EF6;&#x7684;&#x5176;&#x4E2D;&#x4E00;&#x6B21;, &#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x7684;&#x76EE;&#x6807;&#x662F;&#x6807;&#x8BB0;&#x54EA;&#x4E9B;&#x76F4;&#x63A5;&#x88AB;GC Root&#x5F15;&#x7528;&#x6216;&#x8005;&#x88AB;&#x5E74;&#x8F7B;&#x4EE3;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x6240;&#x5F15;&#x7528;&#x7684;&#x6240;
+&#x6709;&#x5BF9;&#x8C61;, &#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;, &#x7EFF;&#x8272;&#x7684;&#x5373;&#x4E3A;&#x88AB;&#x521D;&#x59CB;&#x6807;&#x8BB0;&#x9636;&#x6BB5;&#x6807;&#x8BB0;&#x7684;&#x5BF9;&#x8C61;, &#x4E00;&#x4E2A;&#x662F;&#x76F4;&#x63A5;&#x4E0E;GC Root&#x76F8;&#x8FDE;&#x7684;, &#x4E24;&#x4E2A;&#x662F;&#x7531;&#x5E74;&#x8F7B;&#x4EE3;
+&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x7684;
+</code></pre></li>
+</ul>
+<p><img src="photos/&#x5783;&#x573E;&#x56DE;&#x6536;/08_CMS&#x6536;&#x96C6;&#x5668;_1&#x521D;&#x59CB;&#x6807;&#x8BB0;.png"></p>
+<ul>
+<li>Concurrent Mark(&#x5E76;&#x53D1;&#x6807;&#x8BB0;)<pre><code>&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;GC&#x4F1A;&#x904D;&#x5386;&#x8001;&#x5E74;&#x4EE3;, &#x7136;&#x540E;&#x6807;&#x8BB0;&#x6240;&#x6709;&#x5B58;&#x6D3B;&#x7684;&#x5BF9;&#x8C61;, &#x6839;&#x636E;&#x4E0A;&#x4E2A;&#x9636;&#x6BB5;GC Roots&#x904D;&#x5386;&#x67E5;&#x627E;&#x5230;&#x7684;&#x53BB;&#x904D;&#x5386;&#x8001;&#x5E74;&#x4EE3;, &#x5E76;&#x53D1;
+&#x6807;&#x8BB0;&#x9636;&#x6BB5;&#x7684;&#x7EBF;&#x7A0B;&#x4F1A;&#x4E0E;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#x8FD0;&#x884C;, &#x5E76;&#x4E0D;&#x662F;&#x8001;&#x5E74;&#x4EE3;&#x6240;&#x6709;&#x7684;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x90FD;&#x4F1A;&#x88AB;&#x6807;&#x8BB0;, &#x56E0;&#x4E3A;&#x5728;&#x6807;&#x8BB0;&#x671F;&#x95F4;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x53EF;
+&#x80FD;&#x4F1A;&#x6539;&#x53D8;&#x4E00;&#x4E9B;&#x5F15;&#x7528;, &#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5E76;&#x53D1;&#x6807;&#x8BB0;&#x9636;&#x6BB5;&#x5176;&#x5B9E;&#x5C31;&#x662F;GC Root Tracing&#x7684;&#x8FC7;&#x7A0B;, &#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;, &#x6839;&#x636E;Initial Mark
+&#x9636;&#x6BB5;&#x83B7;&#x53D6;&#x7684;&#x4E09;&#x4E2A;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x5F00;&#x59CB;Tracing, &#x627E;&#x5230;&#x4E86;&#x4E24;&#x4E2A;&#x6807;&#x8BB0;&#x5BF9;&#x8C61;, &#x5E76;&#x4E14;&#x6211;&#x4EEC;&#x5BF9;&#x6BD4;&#x7B2C;&#x4E00;&#x5F20;&#x56FE;&#x53EF;&#x4EE5;&#x770B;&#x5230;, &#x6709;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5DF2;
+&#x7ECF;&#x5931;&#x53BB;&#x4E86;&#x5F15;&#x7528;&#x4E86;
+</code></pre></li>
+</ul>
+<p><img src="photos/&#x5783;&#x573E;&#x56DE;&#x6536;/08_CMS&#x6536;&#x96C6;&#x5668;_2&#x5E76;&#x53D1;&#x6807;&#x8BB0;.png"></p>
+<ul>
+<li>Concurrent Preclean(&#x5E76;&#x53D1;&#x9884;&#x6E05;&#x7406;)<pre><code>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5E76;&#x53D1;&#x9636;&#x6BB5;, &#x4E0E;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#x8FD0;&#x884C;, &#x5E76;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;STW&#x7684;&#x60C5;&#x51B5;, &#x5728;&#x5E76;&#x53D1;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;, &#x4E00;&#x4E9B;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x751F;
+&#x53D8;&#x5316;, &#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x53D1;&#x751F;&#x65F6;, JVM&#x4F1A;&#x5C06;&#x5305;&#x542B;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x533A;&#x57DF;(Card)&#x6807;&#x8BB0;&#x4E3A;Dirty, &#x5373;Card Marking, &#x5728;&#x8BE5;&#x9636;&#x6BB5;,
+&#x90A3;&#x4E9B;&#x80FD;&#x591F;&#x4ECE;Dirty&#x5BF9;&#x8C61;&#x5230;&#x8FBE;&#x7684;&#x5BF9;&#x8C61;&#x4E5F;&#x4F1A;&#x88AB;&#x6807;&#x8BB0;, &#x8FD9;&#x4E2A;&#x6807;&#x8BB0;&#x505A;&#x5B8C;&#x4E4B;&#x540E;, dirty card&#x6807;&#x8BB0;&#x5C31;&#x4F1A;&#x88AB;&#x6E05;&#x9664;&#x4E86;, &#x8BE5;&#x9636;&#x6BB5;&#x5F00;&#x59CB;
+&#x540E;, &#x5176;&#x4F1A;&#x5C06;&#x5F15;&#x7528;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x7684;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x6807;&#x8BB0;, &#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;, &#x7C89;&#x7EA2;&#x8272;&#x6807;&#x8BB0;&#x7684;&#x90A3;&#x4E2A;&#x5BF9;&#x8C61;&#x5176;&#x5F15;&#x7528;&#x6307;&#x5411;&#x4E86;&#x4E00;&#x4E2A;&#x53F3;&#x8FB9;&#x7684;&#x5BF9;&#x8C61;,
+&#x5219;&#x7C89;&#x7EA2;&#x8272;&#x533A;&#x57DF;&#x7684;&#x90A3;&#x4E2A;&#x5BF9;&#x8C61;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;dirty, &#x7136;&#x540E;&#x6839;&#x636E;dirty&#x53BB;Tracing, &#x627E;&#x5230;&#x6240;&#x6709;&#x88AB;dirty&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x94FE;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;
+&#x5373;&#x53F3;&#x8FB9;&#x90A3;&#x4E2A;&#x5BF9;&#x8C61;, &#x5BF9;&#x8BE5;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x6807;&#x8BB0;, &#x6700;&#x540E;&#x6E05;&#x9664;dirty card&#x6807;&#x8BB0;
+</code></pre></li>
+</ul>
+<p><img src="photos/&#x5783;&#x573E;&#x56DE;&#x6536;/08_CMS&#x6536;&#x96C6;&#x5668;_3&#x5E76;&#x53D1;&#x9884;&#x6E05;&#x7406;&#x6807;&#x8BB0;.png"></p>
+<ul>
+<li><p>Concurrent Abortable Preclean(&#x5E76;&#x53D1;&#x53EF;&#x80FD;&#x5931;&#x8D25;&#x7684;&#x9884;&#x6E05;&#x7406;)</p>
+<pre><code>&#x8FD9;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x5E76;&#x53D1;&#x9636;&#x6BB5;, &#x540C;&#x6837;&#x4E0E;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#x8FD0;&#x884C;, &#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x662F;&#x4E3A;&#x4E86;&#x5C3D;&#x91CF;&#x627F;&#x62C5;STW&#x4E2D;&#x6700;&#x7EC8;&#x6807;&#x8BB0;&#x9636;&#x6BB5;&#x7684;&#x5DE5;&#x4F5C;, &#x5373;&#x5728;&#x6807;&#x8BB0;
+&#x6E05;&#x9664;&#x7B97;&#x6CD5;&#x4E2D;, &#x6807;&#x8BB0;&#x9636;&#x6BB5;&#x662F;&#x4F1A;STW&#x7684;, &#x800C;&#x8BE5;&#x9636;&#x6BB5;&#x662F;&#x4E3A;&#x4E86;&#x5C3D;&#x91CF;&#x627F;&#x62C5;&#x8FD9;&#x4E2A;STW&#x6240;&#x4F5C;&#x7684;&#x5DE5;&#x4F5C;&#x53C8;&#x4E0D;&#x4F1A;&#x9020;&#x6210;STW, &#x8BE5;&#x9636;&#x6BB5;&#x6301;&#x7EED;&#x65F6;
+&#x95F4;&#x4F9D;&#x8D56;&#x4E8E;&#x5F88;&#x591A;&#x7684;&#x56E0;&#x7D20;, &#x7531;&#x4E8E;&#x8BE5;&#x9636;&#x6BB5;&#x662F;&#x5728;&#x91CD;&#x590D;&#x505A;&#x5F88;&#x591A;&#x76F8;&#x540C;&#x7684;&#x5DE5;&#x4F5C;, &#x76F4;&#x63A5;&#x6EE1;&#x8DB3;&#x4E00;&#x4E9B;&#x6761;&#x4EF6;(&#x5982;&#x91CD;&#x590D;&#x8FED;&#x4EE3;&#x7684;&#x6B21;&#x6570;&#x3001;&#x5B8C;&#x6210;&#x7684;&#x5DE5;
+&#x4F5C;&#x91CF;&#x6216;&#x8005;&#x65F6;&#x949F;&#x65F6;&#x95F4;&#x7B49;)
+</code></pre></li>
+<li><p>Final Remark(&#x91CD;&#x65B0;&#x6807;&#x8BB0;)</p>
+<pre><code>&#x8FD9;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;STW&#x7684;&#x9636;&#x6BB5;, &#x8BE5;&#x9636;&#x6BB5;&#x7684;&#x76EE;&#x6807;&#x662F;&#x6807;&#x8BB0;&#x8001;&#x5E74;&#x4EE3;&#x6240;&#x6709;&#x7684;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;, &#x7531;&#x4E8E;&#x4E4B;&#x524D;&#x7684;&#x9636;&#x6BB5;&#x662F;&#x5E76;&#x53D1;&#x6307;&#x5411;&#x7684;, &#x6240;&#x4EE5;&#x7528;&#x6237;
+&#x7EBF;&#x7A0B;&#x53EF;&#x80FD;&#x4F1A;&#x5BF9;&#x4E00;&#x4E9B;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x8FDB;&#x884C;&#x4E86;&#x4FEE;&#x6539;, &#x800C;GC&#x7EBF;&#x7A0B;&#x5374;&#x6CA1;&#x6709;&#x8DDF;&#x4E0A;&#x8FD9;&#x4E2A;&#x4FEE;&#x6539;, &#x4E3A;&#x4E86;&#x6700;&#x7EC8;&#x5B8C;&#x6210;&#x6807;&#x8BB0;&#x8001;&#x5E74;&#x4EE3;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x5B58;&#x6D3B;
+&#x5BF9;&#x8C61;, STW&#x5C31;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x4E86;
+
+&#x901A;&#x5E38;CMS&#x7684;&#x91CD;&#x65B0;&#x6807;&#x8BB0;&#x9636;&#x6BB5;&#x4F1A;&#x5728;&#x5E74;&#x8F7B;&#x4EE3;&#x5C3D;&#x53EF;&#x80FD;&#x5E72;&#x51C0;&#x7684;&#x65F6;&#x5019;&#x8FD0;&#x884C;, &#x56E0;&#x4E3A;&#x5E74;&#x8F7B;&#x4EE3;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x8FC7;&#x591A;, &#x53EF;&#x80FD;&#x4E5F;&#x4F1A;&#x5BFC;&#x81F4;&#x8001;&#x5E74;&#x4EE3;&#x4E2D;&#x6D89;
+&#x53CA;&#x7684;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x66F4;&#x591A;, &#x4ECE;&#x800C;&#x4F7F;&#x5F97;STW&#x7684;&#x65F6;&#x95F4;&#x5373;&#x6807;&#x8BB0;&#x65F6;&#x95F4;&#x66F4;&#x957F;
+</code></pre></li>
+</ul>
+<blockquote>
+<p>&#x7ECF;&#x5386;&#x4E86;&#x4E0A;&#x8FF0;&#x4E94;&#x4E2A;&#x9636;&#x6BB5;, &#x8001;&#x5E74;&#x4EE3;&#x6240;&#x6709;&#x5B58;&#x6D3B;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x88AB;&#x6807;&#x8BB0;&#x4E86;, &#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6E05;&#x9664;&#x7B97;&#x6CD5;&#x6765;&#x6E05;&#x7406;&#x90A3;&#x4E9B;&#x5728;&#x8001;&#x5E74;&#x4EE3;&#x4E0D;&#x518D;&#x4F7F;&#x7528;&#x7684;&#x5BF9;&#x8C61;</p>
+</blockquote>
+<ul>
+<li>Concurrent Sweep(&#x5E76;&#x53D1;&#x6E05;&#x9664;)<pre><code>&#x6E05;&#x9664;&#x8001;&#x5E74;&#x4EE3;&#x4E2D;&#x7684;&#x5783;&#x573E;&#x5BF9;&#x8C61;, &#x4E0E;&#x7528;&#x6237;&#x8FDB;&#x7A0B;&#x5E76;&#x53D1;&#x6267;&#x884C;
+</code></pre></li>
+</ul>
+<p><img src="photos/&#x5783;&#x573E;&#x56DE;&#x6536;/08_CMS&#x6536;&#x96C6;&#x5668;_4&#x5E76;&#x53D1;&#x6E05;&#x9664;.png"></p>
+<ul>
+<li>Concurrent Reset(&#x5E76;&#x53D1;&#x91CD;&#x7F6E;)<pre><code>&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;CMS&#x5185;&#x90E8;&#x6570;&#x636E;&#x7ED3;&#x6784;, &#x4E3A;&#x4E0B;&#x4E00;&#x6B21;GC&#x505A;&#x51C6;&#x5907;
+</code></pre></li>
+</ul>
+<h2 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h2>
+<ul>
+<li><p>&#x4EE3;&#x7801;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass8</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> </span>{
+    <span class="hljs-keyword">int</span> size = <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>;
+    <span class="hljs-keyword">byte</span>[] arr1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">4</span> * size];
+    System.out.println( <span class="hljs-string">&quot;1111111111111&quot;</span> );
+
+    <span class="hljs-keyword">byte</span>[] arr2 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">4</span> * size];
+    System.out.println( <span class="hljs-string">&quot;2222222222222&quot;</span> );
+
+    <span class="hljs-keyword">byte</span>[] arr3 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">4</span> * size];
+    System.out.println( <span class="hljs-string">&quot;3333333333333&quot;</span> );
+
+    <span class="hljs-keyword">byte</span>[] arr4 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">2</span> * size];
+    System.out.println( <span class="hljs-string">&quot;4444444444444&quot;</span> );
+  }
+}
+</code></pre>
+</li>
+<li>JVM&#x53C2;&#x6570;<pre><code>-verbose:gc
+-Xms20m
+-Xmx20m
+-Xmn10m
+-XX:+PrintGCDetails
+-XX:SurvivorRatio=8
+-XX:+UseConcMarkSweepGC(&#x5219;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;CMS+ParNew)
+</code></pre></li>
+<li>&#x65E5;&#x5FD7;&#x663E;&#x793A;<pre><code>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x56FE;&#x7247;&#x770B;&#x5230;, &#x5BF9;&#x4E8E;CMS&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x6765;&#x8BF4;, &#x5176;&#x5783;&#x573E;&#x56DE;&#x6536;&#x662F;&#x6267;&#x884C;&#x4E86;&#x4E03;&#x4E2A;&#x9636;&#x6BB5;&#x7684;
+</code></pre><img src="photos/&#x5783;&#x573E;&#x56DE;&#x6536;/08_CMS&#x6536;&#x96C6;&#x5668;_5&#x65E5;&#x5FD7;.png"></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CMS垃圾回收器","level":"1.6.1","depth":2,"next":{"title":"G1垃圾回收器","level":"1.7","depth":1,"ref":"","articles":[]},"previous":{"title":"CMS垃圾回收器","level":"1.6","depth":1,"ref":"","articles":[{"title":"CMS垃圾回收器","level":"1.6.1","depth":2,"path":"src/main/resources/05_6CMS垃圾回收器.md","ref":"src/main/resources/05_6CMS垃圾回收器.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/main/resources/05_6CMS垃圾回收器.md","mtime":"2019-08-13T14:30:56.467Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-13T16:56:07.622Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

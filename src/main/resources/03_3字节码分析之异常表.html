@@ -1,0 +1,631 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>字节码分析之异常表 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03_4虚方法与非虚方法.html" />
+    
+    
+    <link rel="prev" href="03_2字节码完整分析.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    类的加载&连接&初始化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01_类的加载&连接&初始化.html">
+            
+                <a href="01_类的加载&连接&初始化.html">
+            
+                    
+                    类的加载&连接&初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="02_1类加载器详解.html">
+            
+                <a href="02_1类加载器详解.html">
+            
+                    
+                    类加载器详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="02_2自定义类加载器代码.html">
+            
+                <a href="02_2自定义类加载器代码.html">
+            
+                    
+                    自定义类加载器代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    字节码
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="03_1字节码.html">
+            
+                <a href="03_1字节码.html">
+            
+                    
+                    字节码分析1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="03_2字节码完整分析.html">
+            
+                <a href="03_2字节码完整分析.html">
+            
+                    
+                    字节码分析2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="03_3字节码分析之异常表.html">
+            
+                <a href="03_3字节码分析之异常表.html">
+            
+                    
+                    字节码分析之异常表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="03_4虚方法与非虚方法.html">
+            
+                <a href="03_4虚方法与非虚方法.html">
+            
+                    
+                    虚方法与非虚方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="03_5虚方法和非虚方法案例2.html">
+            
+                <a href="03_5虚方法和非虚方法案例2.html">
+            
+                    
+                    虚方法和非虚方法案例2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="03_6JVM基于栈的指令集分析.html">
+            
+                <a href="03_6JVM基于栈的指令集分析.html">
+            
+                    
+                    JVM基于栈的指令集分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    内存结构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="04_1内存结构.html">
+            
+                <a href="04_1内存结构.html">
+            
+                    
+                    内存结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="04_2内存结构之堆内存溢出案例分析.html">
+            
+                <a href="04_2内存结构之堆内存溢出案例分析.html">
+            
+                    
+                    内存结构之堆内存溢出案例分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="04_3内存结构之方法区溢出案例分析.html">
+            
+                <a href="04_3内存结构之方法区溢出案例分析.html">
+            
+                    
+                    内存结构之方法区溢出案例分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    垃圾回收
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="05_1垃圾回收概念描述.html">
+            
+                <a href="05_1垃圾回收概念描述.html">
+            
+                    
+                    垃圾回收概念描述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="05_2垃圾回收日志分析实例.html">
+            
+                <a href="05_2垃圾回收日志分析实例.html">
+            
+                    
+                    垃圾回收日志分析实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="05_3垃圾回收之对象大小晋升阈值测试.html">
+            
+                <a href="05_3垃圾回收之对象大小晋升阈值测试.html">
+            
+                    
+                    垃圾回收之对象大小晋升阈值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="05_4垃圾回收之对象年龄晋升阈值案例.html">
+            
+                <a href="05_4垃圾回收之对象年龄晋升阈值案例.html">
+            
+                    
+                    垃圾回收之对象年龄晋升阈值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="05_5安全点和安全区域.html">
+            
+                <a href="05_5安全点和安全区域.html">
+            
+                    
+                    安全点和安全区域
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    CMS垃圾回收器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="05_6CMS垃圾回收器.html">
+            
+                <a href="05_6CMS垃圾回收器.html">
+            
+                    
+                    CMS垃圾回收器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    G1垃圾回收器
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >字节码分析之异常表</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x6E90;&#x4EE3;&#x7801;">&#x6E90;&#x4EE3;&#x7801;</h2>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass3</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span> <span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        <span class="hljs-keyword">try</span> {
+            InputStream is = <span class="hljs-keyword">new</span> FileInputStream( <span class="hljs-string">&quot;test.txt&quot;</span> );
+
+            ServerSocket serverSocket = <span class="hljs-keyword">new</span> ServerSocket(<span class="hljs-number">9999</span>);
+            serverSocket.accept();
+        } <span class="hljs-keyword">catch</span> (FileNotFoundException ex) {
+
+        } <span class="hljs-keyword">catch</span> (IOException ex) {
+
+        } <span class="hljs-keyword">catch</span> (Exception ex) {
+
+        } <span class="hljs-keyword">finally</span> {
+            System.out.println( <span class="hljs-string">&quot;finally&quot;</span> );
+        }
+    }
+}
+</code></pre>
+<blockquote>
+<p><strong>&#x7531;&#x4E8E;&#x5927;&#x90E8;&#x5206;&#x7684;&#x5185;&#x5BB9;&#x5728;&#x524D;&#x4E24;&#x8282;&#x90FD;&#x5DF2;&#x7ECF;&#x5206;&#x6790;&#x8FC7;&#x4E86;, &#x8FD9;&#x4E00;&#x8282;&#x4E3B;&#x8981;&#x5206;&#x6790;&#x5F02;&#x5E38;&#x8868;, &#x800C;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x4E3B;&#x8981;&#x5728;test&#x65B9;&#x6CD5;&#x4E2D;&#x8FDB;&#x884C;</strong>
+<strong>&#x4E86;&#x5F02;&#x5E38;&#x7684;&#x6355;&#x6349;, &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x4E0B;&#x9762;&#x4E3B;&#x8981;&#x9488;&#x5BF9;test&#x65B9;&#x6CD5;&#x7684;&#x5B57;&#x8282;&#x7801;&#x8FDB;&#x884C;&#x5206;&#x6790;</strong></p>
+</blockquote>
+<h2 id="&#x5206;&#x6790;">&#x5206;&#x6790;</h2>
+<ul>
+<li>InputStream is = new FileInputStream( &quot;test.txt&quot; );</li>
+</ul>
+<p><img src="photos/&#x5B57;&#x8282;&#x7801;/018_&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5206;&#x6790;_&#x5F02;&#x5E38;&#x8868;.png"></p>
+<ul>
+<li>ServerSocket serverSocket = new ServerSocket(9999);</li>
+</ul>
+<p><img src="photos/&#x5B57;&#x8282;&#x7801;/019_&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5206;&#x6790;_&#x5F02;&#x5E38;&#x8868;.png"></p>
+<ul>
+<li>serverSocket.accept();</li>
+</ul>
+<p><img src="photos/&#x5B57;&#x8282;&#x7801;/020_&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5206;&#x6790;_&#x5F02;&#x5E38;&#x8868;.png"></p>
+<ul>
+<li>catch&#x4EE3;&#x7801;&#x5757;</li>
+</ul>
+<p><img src="photos/&#x5B57;&#x8282;&#x7801;/021_&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5206;&#x6790;_&#x5F02;&#x5E38;&#x8868;.png"></p>
+<ul>
+<li>JVM&#x751F;&#x6210;&#x7684;&#x5F02;&#x5E38;&#x5BF9;&#x8C61;</li>
+</ul>
+<p><img src="photos/&#x5B57;&#x8282;&#x7801;/022_&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5206;&#x6790;_&#x5F02;&#x5E38;&#x8868;.png"></p>
+<ul>
+<li>&#x5F02;&#x5E38;&#x8868;&#x5206;&#x6790;</li>
+</ul>
+<p><img src="photos/&#x5B57;&#x8282;&#x7801;/023_&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5206;&#x6790;_&#x5F02;&#x5E38;&#x8868;.png"></p>
+<h2 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h2>
+<pre><code>&#x5728;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x4E2D;, &#x6211;&#x4EEC;&#x8BA4;&#x4E3A;Exception&#x4F1A;&#x5904;&#x7406;&#x6240;&#x6709;&#x7684;&#x5F02;&#x5E38;, &#x4F46;&#x662F;&#x5BF9;&#x4E8E;JVM&#x6765;&#x8BF4;&#x4E0D;&#x662F;&#x8FD9;&#x4E48;&#x8BA4;&#x4E3A;&#x7684;, catch type&#x4E3A;0&#x5219;&#x8868;
+&#x793A;JVM&#x5904;&#x7406;&#x6240;&#x6709;&#x7684;&#x5F02;&#x5E38;
+
+&#x5229;&#x7528;&#x5F02;&#x5E38;&#x8868;&#x6765;&#x5BF9;&#x5F02;&#x5E38;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x65F6;, &#x5982;&#x679C;&#x5B58;&#x5728;finally&#x8BED;&#x53E5;&#x5757;, JVM&#x4F1A;&#x5C06;finally&#x8BED;&#x53E5;&#x5757;&#x7684;&#x5B57;&#x8282;&#x7801;(&#x6216;&#x8005;&#x52A9;&#x8BB0;&#x7B26;&#x8868;&#x793A;)
+&#x62FC;&#x63A5;&#x5230;&#x6BCF;&#x4E00;&#x4E2A;catch&#x5757;&#x540E;&#x9762;, &#x6362;&#x53E5;&#x8BDD;&#x8BF4;, &#x7A0B;&#x5E8F;&#x4E2D;&#x4E00;&#x4E2A;try&#x8BED;&#x53E5;&#x5B58;&#x5728;&#x591A;&#x5C11;&#x4E2A;catch&#x5757;, &#x5C31;&#x4F1A;&#x5728;&#x6BCF;&#x4E00;&#x4E2A;catch&#x5757;&#x540E;&#x9762;&#x91CD;
+&#x590D;&#x591A;&#x5C11;&#x4E2A;finally&#x8BED;&#x53E5;&#x5757;&#x7684;&#x5B57;&#x8282;&#x7801;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03_2字节码完整分析.html" class="navigation navigation-prev " aria-label="Previous page: 字节码分析2">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03_4虚方法与非虚方法.html" class="navigation navigation-next " aria-label="Next page: 虚方法与非虚方法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"字节码分析之异常表","level":"1.3.3","depth":2,"next":{"title":"虚方法与非虚方法","level":"1.3.4","depth":2,"path":"src/main/resources/03_4虚方法与非虚方法.md","ref":"src/main/resources/03_4虚方法与非虚方法.md","articles":[]},"previous":{"title":"字节码分析2","level":"1.3.2","depth":2,"path":"src/main/resources/03_2字节码完整分析.md","ref":"src/main/resources/03_2字节码完整分析.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/main/resources/03_3字节码分析之异常表.md","mtime":"2019-08-13T15:31:15.163Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-13T16:56:07.622Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
