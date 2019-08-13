@@ -49,10 +49,11 @@
   -verbose:gc: 详细的输出垃圾回收相关的日志  
 
 垃圾收集器的开启:
-  <1> 默认为-UseParallelGC(Parallel Scavenge和Parallel Old)
-  <2> -XX:UseSerialGC(Serial + Serial Old)
-  <3> -XX:UseConcMarkSweepGC(CMS垃圾收集器, 老年代)
-  <4> -XX:UseParNew(ParNew, 新生代)
+  <1> 默认为-XX:+UseParallelGC(Parallel Scavenge和Parallel Old)
+  <2> -XX:+UseSerialGC(Serial + Serial Old)
+  <3> -XX:+UseConcMarkSweepGC(CMS垃圾收集器, 老年代 + ParNew)
+  <4> -XX:+UseParNewGC(ParNew, 新生代, 如果使用该参数指定ParNew新生代垃圾回收器, 则老年代的垃圾
+      回收器默认为Serial Old, 这是JVM不推荐使用的)
 ```
 
 
