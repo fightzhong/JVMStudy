@@ -1,8 +1,9 @@
-JDK版本: 1.8
+**JDK版本: 1.8**
 
-gitpages地址: [JVM学习笔记](https://fightzhong.github.io/JVMStudy/)
+**Gitpages地址:** [JVM学习笔记](https://fightzhong.github.io/JVMStudy/)
 
 > **建议直接用gitbook查看, 本仓库主分支为笔记的源文件**
+
 
 > **由于笔者能力有限, 可能在一些地方理解的有所不对, 大家可以通过提issue的方式来一起交流, 其中关于G1的后期再补充了, 花了三天的时间看了下许多博客, 有点晕。。打算先放一放**
 
